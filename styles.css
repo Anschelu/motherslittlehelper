@@ -1,0 +1,178 @@
+@font-face {
+    font-family: DMT;
+    src: url(/assets/fonts/DMT/DMTLLVarEduWeb-[SIZE\,ROTA\,wght].woff);
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    opacity: 1;
+    font-family: DMT;
+    font-size: 9.3vmin;
+    line-height: 0.95;
+    margin: 0px;
+    padding: 0px;
+    font-variation-settings:
+        "ROTA" 0,
+        "SIZE" 60,
+        "wght" 350;
+}
+
+h2 {
+    font-family: DMT;
+    font-size: 1.87vmin;
+    letter-spacing: 0.075vmin;
+    line-height: 2.1;
+    margin: 0px;
+    padding: 0px;
+    font-variation-settings:
+        "ROTA" 0,
+        "SIZE" 9,
+        "wght" 400;
+}
+
+h3 {
+    font-family: DMT;
+    font-size: 9.3vmin;
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: -1.5vmin;
+    font-variation-settings:
+        "ROTA" 90,
+        "SIZE" 100,
+        "wght" 350;
+}
+
+h4 {
+    font-family: DMT;
+    font-size: 9.3vmin;
+    line-height: 1;
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: -0.55vmin;
+    font-variation-settings:
+        "ROTA" 90,
+        "SIZE" 100,
+        "wght" 350;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 2s ease-in-out, font-variation-settings 1s ease-in-out;
+}
+
+.letter.animate-letter {
+  font-variation-settings: 'ROTA' 360, 'SIZE' 100, 'wght' 100;
+}
+
+.letter.animate-tilt {
+  font-variation-settings: 'ROTA' var(--tilt-rota, 0), 'wght' var(--tilt-weight, 350), 'SIZE' var(--tilt-size, 0);
+  transition: font-variation-settings 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy easing! */
+}
+
+.letter.animate-letter-weight {
+  font-variation-settings: 'wght' 100;
+  transition: font-variation-settings 5s ease-in-out;
+}
+
+.light {
+  font-variation-settings:
+    "ROTA" 9,
+    "SIZE" 0,
+    "wght" 300;
+}
+
+#percentage {
+    display: flex;
+    flex-direction: column;
+}
+
+#material {
+    display: flex;
+    flex-direction: column;
+     font-variation-settings: 'ROTA' 360, 'SIZE' 100, 'wght' 100;
+     letter-spacing: 1;
+}
+
+#main-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+#graphics {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 7.5vmin;
+}
+
+#barcode {
+    display: flex;
+    position: relative;
+    bottom: -1.5vmin;
+    left: -0.7vmin;
+}
+
+#page-container {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+#page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+#out_canvas_colors {
+    width: 80vmin;
+    height: 80vmin;
+    object-fit: cover;
+    z-index: 5;
+    display: block;
+    filter: brightness(1.1) contrast(1.2) saturate(1.1);
+}
+
+
+#layout-grid {
+    display: flex;
+    background-color: white;
+    color: black;
+    width: 80vmin; 
+    height: 80vmin;
+    aspect-ratio: 1 / 1;
+    padding: 1.2vmin;
+    padding-right: 2.4vmin;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+
+#webcam_canvas {
+    display: none;
+}
+
+#opencv_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 10;
+}
